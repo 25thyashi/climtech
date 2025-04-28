@@ -64,3 +64,42 @@ nav a:hover {
 main {
     margin-top: 30px; /* Add space between nav and main content */
 }
+/* Make the page container a flex container */
+.page-container {
+    display: flex;
+    /* align-items: flex-start; /* Optional: Align tops if heights differ */
+}
+
+/* Style the sidebar (logo + nav) */
+.sidebar {
+    width: 200px;       /* Set a fixed width for the sidebar - adjust as needed */
+    flex-shrink: 0;     /* Prevent the sidebar from shrinking */
+    padding-right: 30px; /* Add space between nav text and the divider */
+    border-right: 1px solid #cccccc; /* Add the light vertical divider */
+    /* min-height: 100vh; */ /* Optional: Make divider full height if needed */
+}
+
+/* Adjust logo margin within the sidebar if needed */
+#logo {
+    margin-bottom: 30px; /* Increased space below logo */
+}
+
+/* Style the main content area */
+main {
+    flex-grow: 1;       /* Allow main content to take up remaining space */
+    padding-left: 40px; /* Add space between the divider and main content */
+    max-width: 800px;  /* Limit content width for readability - adjust as needed */
+    /* margin: 0 auto; */ /* This won't center it within the flex space like a block element */
+}
+
+/* Ensure body padding doesn't interfere too much with flex */
+body {
+    background-color: #FAF8F0;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 18px;
+    line-height: 1.6;
+    color: #333;
+    /* Keep some padding, but maybe less left/right if page-container handles it */
+    padding: 20px; /* Adjust if needed, maybe just top/bottom */
+    margin: 0;
+}
