@@ -1,0 +1,10 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CEEW Clim-Tech</title>
+</head>
+<body>
+    <h1>On the intersection of Climate, Data, and AI</h1>
+    <p>CEEW's Clim-Tech department is the Council's foray into integrating geospatial data, AI-ML into its traditional climate research</p>
+</body>
+</html>
