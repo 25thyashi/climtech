@@ -1,18 +1,20 @@
 /* Apply styles to the whole page */
 body {
-    background-color: #FAF8F0; /* A warm off-white - adjust as needed! */
-    font-family: 'DM Sans', sans-serif; /* Use DM Sans, fallback to generic sans-serif */
-    font-size: 18px; /* Base font size - adjust as needed */
-    line-height: 1.6; /* Improves readability */
-    color: #333; /* Default text color (dark grey) */
-    padding: 20px 40px; /* Add padding: 20px top/bottom, 40px left/right */
+    background-color: #FAF8F0; /* A warm off-white */
+    font-family: 'DM Sans', sans-serif;
+    font-size: 18px; 
+    line-height: 1.2; 
+    color: #333;
+    padding: 20px;     
     margin: 0; /* Remove default body margin */
+    min-height: 100vh;
+    height: 100%;
 }
 
 /* Style main headings */
 h1 {
-    font-size: 2.5em; /* Make H1 significantly larger (relative to body font size) */
-    font-weight: 700; /* Use the bold weight we imported */
+    font-size: 2.5em;
+    font-weight: 700;
 }
 
 /* Add some space below paragraphs */
@@ -20,86 +22,139 @@ p {
     margin-bottom: 1em;
 }
 
+/* layout containers */
+.page-container{
+    display: flex;
+    min-height: 100vh; /* to make container fill the viewport height */
+}
+
+.sidebar{
+    width: 100px;
+    flex-shrink: 0; /* to prevent sidebar from shrinking */
+    padding-right: 30px; /* space between text and divider */
+    padding-bottom: 20px; /* space at the very bottom */
+    border-right: 1px solid #cccccc; /* vertical divider */
+    display: flex; /* sidebar is a flex container for logo and nav */
+    flex-direction: column;
+}
+
+main{
+    flex-grow: 1; /* main content grows to fill up the space */
+    padding-left: 150px; /* space between divider and main content */
+    max-width: 800px; /* viewport */
+    margin-top: 30px; 
+}
+
+/*sidebar content */
 /* Style the Logo */
 #logo {
-    display: block; /* Make the image a block element */
-    max-width: 150px; /* Limit logo size - adjust as needed */
+    display: block; 
+    max-width: 150px;
     margin-bottom: 20px; /* Add space below the logo */
+    flex-shrink: 0; /* responsive logo */
 }
 
 /* Style the Navigation Container */
 nav {
-    /* No specific styles needed yet for vertical layout, */
-    /* but you could add width or margin here if required */
+    flex-grow: 1;    /* let the UL handle growing */
 }
 
-/* Style the Navigation List */
-nav ul {
-    list-style-type: none; /* Remove bullet points */
-    padding-left: 0;       /* Remove default browser padding */
-    margin: 0;             /* Remove default browser margin */
+nav ul{
+    list-style-type: none;
+    padding-left: 0;
+    margin: 0;
+    display: flex; /* UL is a flex container for list items and grows */
+    flex-direction: column;
+    flex-grow: 2; /* to make the UL fill space below the logo */
 }
-
 /* Style Individual Navigation Items */
 nav li {
-    margin-bottom: 10px; /* Add vertical spacing between links */
+    margin-bottom: 10px; /* vertical spacing between links */
 }
 
 /* Style Navigation Links */
 nav a {
-    font-family: 'DM Mono', monospace; /* Use DM Mono, fallback to generic monospace */
-    font-size: 1.1em;        /* Slightly larger than body text - adjust */
-    text-decoration: none; /* Remove underline from links */
-    color: #555;           /* Link color - adjust */
-    display: block;        /* Make the whole link area clickable */
+    font-family: 'DM Mono', monospace; 
+    font-size: 1.1em;       
+    text-decoration: none;
+    color: #555;          
+    display: block;       
 }
 
 /* Style Link Hover State */
 nav a:hover {
-    color: #000;           /* Darken link color on hover */
-    /* Add other hover effects if desired, e.g., background-color */
+    color: #EA5813;           
 }
-
-/* Style the Main Content Area */
-main {
-    margin-top: 30px; /* Add space between nav and main content */
+.contact-item{
+    margin-top: 270px; /* pushes this to the bottom of the nav ul container */
+    margin-bottom: 10px;
+    list-style-type: none;
 }
-/* Make the page container a flex container */
-.page-container {
-    display: flex;
-    /* align-items: flex-start; /* Optional: Align tops if heights differ */
-}
-
-/* Style the sidebar (logo + nav) */
-.sidebar {
-    width: 200px;       /* Set a fixed width for the sidebar - adjust as needed */
-    flex-shrink: 0;     /* Prevent the sidebar from shrinking */
-    padding-right: 30px; /* Add space between nav text and the divider */
-    border-right: 1px solid #cccccc; /* Add the light vertical divider */
-    /* min-height: 100vh; */ /* Optional: Make divider full height if needed */
-}
-
-/* Adjust logo margin within the sidebar if needed */
-#logo {
-    margin-bottom: 30px; /* Increased space below logo */
-}
-
-/* Style the main content area */
-main {
-    flex-grow: 1;       /* Allow main content to take up remaining space */
-    padding-left: 40px; /* Add space between the divider and main content */
-    max-width: 800px;  /* Limit content width for readability - adjust as needed */
-    /* margin: 0 auto; */ /* This won't center it within the flex space like a block element */
-}
-
-/* Ensure body padding doesn't interfere too much with flex */
-body {
-    background-color: #FAF8F0;
+.contact-button{
+    display: block;
+    padding: 10px 10px;
+    background-color: #333;
+    color: #ffffff;
+    border-radius: 5px;
+    text-align: center;
     font-family: 'DM Sans', sans-serif;
-    font-size: 18px;
-    line-height: 1.6;
-    color: #333;
-    /* Keep some padding, but maybe less left/right if page-container handles it */
-    padding: 20px; /* Adjust if needed, maybe just top/bottom */
-    margin: 0;
+    font-size: 0.8em;
+    text-decoration: none;
+    transition: background-color 0.2 s ease;
+}
+.contact-button:hover{
+    background-color: #EA5813;
+    color: white;
+}
+
+/* Container for the cards */
+.card-container {
+    display: flex;          /* Arrange cards horizontally */
+    justify-content: space-around; /* Distribute space around cards */
+    flex-wrap: wrap;        /* Allow cards to wrap onto next line on small screens */
+    gap: 5px;              /* Add space between cards */
+    margin-top: 30px;       /* Add space above the card section */
+    padding-top: 30px;     
+}
+
+/* Styling for individual cards */
+.info-card {
+    background-color: #ffffff; 
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;       /* Rounded corners */
+    padding: 25px;            /* Inner spacing */
+    box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.08); /* Subtle shadow */
+    text-decoration: none;    /* Remove underline from link */
+    color: inherit;           /* Use the default text color */
+    text-align: center;
+    /* Adjust flex properties for responsiveness */
+    flex-basis: 250px; /* Minimum width before wrapping - adjust */
+    flex-grow: 1;      /* Allow cards to grow and fill space */
+    max-width: 200px;  
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+/* Style card headings */
+.info-card h3 {
+    font-family: 'DM Mono', monospace;
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 1.2em;
+    color: #1a1a1a; /* Slightly darker heading color */
+}
+
+ /* Style card paragraphs */
+.info-card p {
+    font-size: 0.95em;
+    color: #555; /* Slightly lighter paragraph color */
+    margin-bottom: 0;
+}
+
+/* Simple hover effect */
+.info-card:hover {
+    background-color: #EA5813;
+    text-decoration-color: #FAF8F0;
+   /* box-shadow: 5px 5px 12px #EA5813 (0, 0, 0, 0.12); */ /* Error in original: Color name inside rgba() */
+   box-shadow: 5px 5px 12px rgba(0, 0, 0, 0.12); /* Corrected shadow */
+   transform: translateY(-4px);
 }
