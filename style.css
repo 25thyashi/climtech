@@ -152,7 +152,7 @@ nav a:hover {
 
 /* Simple hover effect */
 .info-card:hover {
-    background-color: #EA5813;
+    background-color: #FACAB1;
     text-decoration-color: #FAF8F0;
    /* box-shadow: 5px 5px 12px #EA5813 (0, 0, 0, 0.12); */ /* Error in original: Color name inside rgba() */
    box-shadow: 5px 5px 12px rgba(0, 0, 0, 0.12); /* Corrected shadow */
