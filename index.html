@@ -1,41 +1,83 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>CEEW Clim-Tech</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap" rel="stylesheet">
-</head>
 <body>
+<link rel="stylesheet" href="style.css">
 
-    <div class="page-container"> <div class="sidebar"> <img src="images/ceew-logo.png" alt="CEEW Logo" id="logo">
+    <div id="dappled-light">
+        <div id="glow"></div>
+        <div id="glow-bounce"></div>
+        <div class="perspective">
+            <div id="leaves">
+                <svg style="width: 0; height: 0; position: absolute;">
+                    <defs>
+                        <filter id="wind" x="-20%" y="-20%" width="140%" height="140%">
+                            <feTurbulence type="fractalNoise" numOctaves="2" seed="1">
+                                <animate attributeName="baseFrequency" dur="16s" keyTimes="0;0.33;0.66;1"
+                                    values="0.005 0.003;0.01 0.009;0.008 0.004;0.005 0.003" repeatCount="indefinite" />
+                            </feTurbulence>
+                            <feDisplacementMap in="SourceGraphic">
+                                <animate attributeName="scale" dur="20s" keyTimes="0;0.25;0.5;0.75;1" values="45;55;75;55;45"
+                                    repeatCount="indefinite" />
+                            </feDisplacementMap>
+                        </filter>
+                    </defs>
+                </svg>
+            </div>
+            <div id="blinds">
+                <div class="shutters">
+                    <div class="shutter"></div><div class="shutter"></div><div class="shutter"></div>
+                    <div class="shutter"></div><div class="shutter"></div><div class="shutter"></div>
+                    <div class="shutter"></div><div class="shutter"></div><div class="shutter"></div>
+                    <div class="shutter"></div><div class="shutter"></div><div class="shutter"></div>
+                    <div class="shutter"></div><div class="shutter"></div><div class="shutter"></div>
+                    <div class="shutter"></div><div class="shutter"></div><div class="shutter"></div>
+                    <div class="shutter"></div><div class="shutter"></div><div class="shutter"></div>
+                    <div class="shutter"></div><div class="shutter"></div>
+                 </div>
+                 <div class="vertical">
+                     <div class="bar"></div>
+                     <div class="bar"></div>
+                 </div>
+             </div>
+         </div>
+         <div id="progressive-blur">
+             <div></div>
+             <div></div>
+             <div></div>
+             <div></div>
+         </div>
+     </div>
+     <div class="page-container">
 
-            <nav>
-                <ul>
-                    <li><a href="index.html">home</a></li>
-            	    <li><a href="#">about</a></li>      
-                    <li><a href="tools.html">CEEW's tools</a></li>  
-                    <li><a href="datasets.html">climate datasets</a></li>  
-                   <li><a href="models.html">climate AI models</a></li> </ul>
-                   <li class="contact-item">
-                    <a href="mailto:climtech.admin@ceew.in" class="contact-button">Contact Us</a>    
-            </nav>
-    </div><main>
-    <h1>The intersection of Climate X Data X AI</h1>
-    <p>CEEW’s Climate Tech department leverages geospatial data, AI-ML to address our most pressing environmental concerns.</p>
-    <div class="card-container">
-        <a href="datasets.html" class="info-card"> <h3>Climate Datasets</h3>
-            <p>Pre-vetted datasets on everything climate.</p>
-        </a>
+         <div class="sidebar">
+             <img src="images/ceew-logo.png" alt="CEEW Logo" id="logo">
+             <nav>
+                 <ul>
+                     <li><a href="index.html">🏠HOME</a></li>
+                     <li><a href="#">📖ABOUT</a></li>
+                     <li><a href="tools.html">🔨TOOLS</a></li>
+                     <li><a href="datasets.html">📅DATASETS</a></li>
+                     <li><a href="models.html">🤖AI MODELS</a></li>
+                     <li class="contact-item">
+                         <a href="mailto:climtech.admin@ceew.in" class="contact-button">Contact Us</a>
+                     </li>
+                 </ul>
+             </nav>
+         </div> <main>
+             <h1>The intersection of Climate X Data X AI</h1>
+             <p>CEEW’s Climate Tech department leverages geospatial data, AI-ML to address our most pressing environmental concerns.</p>
 
-        <a href="models.html" class="info-card"> <h3>Climate AI Models</h3>
-            <p>Discover the models developed or utilized by CEEW.</p>
-        </a>
-
-        <a href="tools.html" class="info-card"> <h3>CEEW’s Tools</h3>
-            <p>Access various tools created by CEEW.</p>
-        </a>
-    </div>    
-</body>
+             <div class="card-container">
+                 <a href="datasets.html" class="info-card">
+                     <h3>Climate Datasets</h3>
+                     <p>Pre-vetted datasets on everything climate.</p>
+                 </a>
+                 <a href="models.html" class="info-card">
+                     <h3>Climate AI Models</h3>
+                     <p>Discover the models developed or utilized by CEEW.</p>
+                 </a>
+                 <a href="tools.html" class="info-card">
+                     <h3>CEEW’s Tools</h3>
+                     <p>Access various tools created by CEEW.</p>
+                 </a>
+             </div>
+         </main> </div> </body>
 </html>
